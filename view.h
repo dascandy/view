@@ -8,7 +8,9 @@ struct filter_view {
         : it_(std::begin(c))
         , end_(std::end(c))
         , pred_(std::move(p))
-    {}
+    {
+        while (it_ != end_ && !pred_(*it_)) ++it_;
+    }
     struct sentinel {};
     filter_view& begin() {
         return *this;

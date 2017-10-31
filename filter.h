@@ -30,10 +30,10 @@ struct filter_view {
     decltype(*::std::begin(::std::declval<Container&>())) &operator*() {
         return *it_;
     }
-    bool operator!=(const sentinel& oi) {
+    bool operator!=(const sentinel&) {
         return it_ != end_;
     }
-    bool operator==(const sentinel& oi) {
+    bool operator==(const sentinel&) {
         return it_ == end_;
     }
 };

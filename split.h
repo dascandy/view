@@ -17,7 +17,7 @@ struct split_view {
         : it_(std::begin(str))
         , end_cur_(it_)
         , end_(std::end(str))
-        , chars_(std::move(chars))
+        , chars_(chars)
     {
         while (end_cur_ != end_ && chars_.find(*end_cur) != chars_.end()) ++end_cur_;
     }
